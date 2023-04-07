@@ -37,7 +37,5 @@ services:
   node_exporter:
     container_name: node_exporter
     image: quay.io/prometheus/node-exporter:latest
-    volumes:
-      - "/:/rootfs:ro"
     ports:
       - 9100:9100
