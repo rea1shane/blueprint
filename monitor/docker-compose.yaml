@@ -33,9 +33,3 @@ services:
       - ALERTMANAGER_URI=http://alertmanager:9093
     ports:
       - 8080:8080
-
-  node_exporter:
-    container_name: node_exporter
-    image: quay.io/prometheus/node-exporter:latest
-    ports:
-      - 9100:9100
