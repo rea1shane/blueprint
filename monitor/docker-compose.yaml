@@ -23,6 +23,12 @@ services:
   alertmanager:
     container_name: alertmanager
     image: quay.io/prometheus/alertmanager:latest
+    command:
+      [
+        "--config.file=/etc/alertmanager/alertmanager.yml"
+      ]
+    volumes:
+      - ~/tmp/prometheus/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
     ports:
       - 9093:9093
 
