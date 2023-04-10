@@ -10,7 +10,8 @@ services:
         "--web.enable-lifecycle"
       ]
     volumes:
-      - ~/tmp/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ~/tmp/monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ~/tmp/monitor/resources/rules:/etc/prometheus/rules
     ports:
       - 9090:9090
 
@@ -28,7 +29,7 @@ services:
         "--config.file=/etc/alertmanager/alertmanager.yml"
       ]
     volumes:
-      - ~/tmp/prometheus/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - ~/tmp/monitor/prometheus/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
     ports:
       - 9093:9093
 
