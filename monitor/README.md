@@ -40,4 +40,5 @@ alerting:
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
   - /etc/prometheus/rules/*.yml
+  - /etc/prometheus/rules/*.yaml
 ```
