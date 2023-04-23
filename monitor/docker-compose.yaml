@@ -15,6 +15,15 @@ services:
     ports:
       - 9090:9090
 
+  blackbox_exporter:
+    container_name: blackbox_exporter
+    image: quay.io/prometheus/blackbox-exporter:latest
+    command: [ "--config.file=/etc/blackbox_exporter/blackbox.yml" ]
+    volumes:
+      - ~/tmp/monitor/prometheus/blackbox_exporter/blackbox.yml:/etc/blackbox_exporter/blackbox.yml
+    ports:
+      - 9115:9115
+
   grafana:
     container_name: grafana
     image: grafana/grafana-oss:latest
@@ -24,10 +33,7 @@ services:
   alertmanager:
     container_name: alertmanager
     image: quay.io/prometheus/alertmanager:latest
-    command:
-      [
-        "--config.file=/etc/alertmanager/alertmanager.yml"
-      ]
+    command: [ "--config.file=/etc/alertmanager/alertmanager.yml" ]
     volumes:
       - ~/tmp/monitor/prometheus/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
     ports:
