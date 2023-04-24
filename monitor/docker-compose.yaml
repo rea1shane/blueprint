@@ -15,6 +15,12 @@ services:
     ports:
       - 9090:9090
 
+  pushgateway:
+    container_name: pushgateway
+    image: prom/pushgateway:latest
+    ports:
+      - 9091:9091
+
   blackbox_exporter:
     container_name: blackbox_exporter
     image: quay.io/prometheus/blackbox-exporter:latest

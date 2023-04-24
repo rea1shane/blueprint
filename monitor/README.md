@@ -30,15 +30,20 @@
 2. 修改 `~/tmp/monitor/prometheus/prometheus.yml`：
 
    ```yaml
-   # 指定 Alertmanager
    alerting:
      alertmanagers:
        - static_configs:
            - targets:
+               # 指定 Alertmanager
                - alertmanager:9093
 
-   # 添加 blackbox_exporter 到监控列表
    scrape_configs:
+     # 添加 pushgateway 到监控列表
+     - job_name: "pushgateway"
+       static_configs:
+         - targets: ["pushgateway:9091"]
+
+     # 添加 blackbox_exporter 到监控列表
      - job_name: "blackbox_exporter"
        static_configs:
          - targets: ["blackbox_exporter:9115"]
