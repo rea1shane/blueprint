@@ -1,8 +1,9 @@
 # monitor
 
-包含以下平台组件：
+项目包含以下组件：
 
 - [Prometheus](https://github.com/prometheus/prometheus)
+- [Blackbox exporter](https://github.com/prometheus/blackbox_exporter)
 - [Grafana](https://github.com/grafana/grafana)
 - [Alertmanager](https://github.com/prometheus/alertmanager)
 - [karma](https://github.com/prymitive/karma)
