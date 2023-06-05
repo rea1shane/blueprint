@@ -2,6 +2,15 @@ FROM --platform=linux/amd64 gradle:jdk8 as builder
 
 WORKDIR /usr/src
 
+RUN sudo apt install \
+    openjfx=8u161-b12-1ubuntu2 \
+    libopenjfx-java=8u161-b12-1ubuntu2 \
+    libopenjfx-jni=8u161-b12-1ubuntu2 && \
+    sudo apt-mark hold \
+    openjfx \
+    libopenjfx-java \
+    libopenjfx-jni
+
 RUN git clone -b 3.90.0 https://github.com/azkaban/azkaban.git && \
     cd azkaban; ./gradlew build installDist
 
