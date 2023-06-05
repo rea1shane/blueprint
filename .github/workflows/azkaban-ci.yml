@@ -25,6 +25,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: azkaban
+          context: ./azkaban/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/azkaban-solo-server:latest
