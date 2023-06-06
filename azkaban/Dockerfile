@@ -2,12 +2,13 @@ FROM openjdk:8
 
 WORKDIR /app
 
-# javafx and node
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends openjfx && \
+    # javafx
+    apt-get install -y --no-install-recommends openjfx && \ 
     rm -rf /var/lib/apt/lists/* && \
+    # node
     apt-get install -y curl && \
-    curl -fsSL https://deb.nodesource.com/setup_8.x | sudo -E bash - &&\
+    curl -fsSL https://deb.nodesource.com/setup_8.x | -E bash - &&\
     apt-get install -y nodejs && \
     curl -L https://www.npmjs.com/install.sh | sh && \
     apt-get install -y npm
