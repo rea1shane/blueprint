@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends openjfx && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+    curl -fsSL https://deb.nodesource.com/setup_8.x | sudo -E bash - &&\
     apt-get install -y nodejs && \
     curl -L https://www.npmjs.com/install.sh | sh && \
     apt-get install -y npm
