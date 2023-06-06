@@ -9,9 +9,7 @@ RUN apt-get update && \
     # node
     apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs && \
-    curl -L https://www.npmjs.com/install.sh | sh && \
-    apt-get install -y npm
+    apt-get install -y nodejs
 
 RUN git clone -b 3.90.0 https://github.com/azkaban/azkaban.git && \
     cd azkaban; ./gradlew build installDist -x test
