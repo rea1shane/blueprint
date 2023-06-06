@@ -6,8 +6,8 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get install -y --no-install-recommends openjfx && \
     rm -rf /var/lib/apt/lists/* && \
-    apt install nodejs && \
-    apt install npm
+    apt-get install -y nodejs && \
+    apt-get install -y npm
 
 RUN git clone -b 3.90.0 https://github.com/azkaban/azkaban.git && \
     cd azkaban; ./gradlew build installDist
