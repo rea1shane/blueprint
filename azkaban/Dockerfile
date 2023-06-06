@@ -8,7 +8,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     # node
     apt-get install -y curl && \
-    curl -fsSL https://deb.nodesource.com/setup_8.x | bash - &&\
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
     apt-get install -y nodejs && \
     curl -L https://www.npmjs.com/install.sh | sh && \
     apt-get install -y npm
