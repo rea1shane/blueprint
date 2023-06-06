@@ -1,4 +1,4 @@
-FROM gradle:4.6-jdk8
+FROM openjdk:8
 
 WORKDIR /src
 
@@ -8,7 +8,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     # node
     apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
+    curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs && \
     curl -L https://www.npmjs.com/install.sh | sh && \
     apt-get install -y npm
