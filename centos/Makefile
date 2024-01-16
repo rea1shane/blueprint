@@ -1,5 +1,7 @@
+IMAGE_TAG = latest
+
 build:
-	docker build -t rea1shane/centos:$(IMAGE_VERSION) --no-cache .
+	docker build -t rea1shane/centos:$(IMAGE_TAG) --no-cache .
 
 run:
 	docker run --name $(CONTAINER_NAME) -d \
@@ -7,5 +9,5 @@ run:
 		-p $(SSH_PORT):22 \
 		--privileged=true \
 		$(ARGS) \
-		rea1shane/centos:$(IMAGE_VERSION) \
+		rea1shane/centos:$(IMAGE_TAG) \
 		/usr/sbin/init

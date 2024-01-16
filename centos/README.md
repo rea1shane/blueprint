@@ -5,7 +5,7 @@
 ## 构建
 
 ```shell
-make build IMAGE_VERSION={image_version}
+make build
 ```
 
 ## 运行
@@ -14,8 +14,7 @@ make build IMAGE_VERSION={image_version}
 make run \
     CONTAINER_NAME={container_name} \
     SSH_PORT={ssh_port} \
-    ARGS={args} \
-    IMAGE_VERSION={image_version}
+    ARGS={args}
 ```
 
 ## 设置 root 密码
